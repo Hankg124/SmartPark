@@ -4,7 +4,8 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { loginApi } from '@/router/login/login'
+import { loginApi } from '@/api/login/login';
+
 
 const loginFn = async () => {
   await loginApi({ username: 'demo', password: 'zh@hm#23' })

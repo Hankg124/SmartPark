@@ -6,5 +6,5 @@ export type loginParamsType = {
   username: string
 }
 export const loginApi = (loginParams: loginParamsType) => {
-  return request('/park/login', 'POST', loginParams)
+  return request('/api/park/login', 'POST', loginParams)
 }
