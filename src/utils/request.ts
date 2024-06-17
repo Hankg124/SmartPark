@@ -38,8 +38,13 @@ type DataType<T = any> = {
   msg: string
 }
 
-const request =<T=any> (url: string, method = 'GET', data?: Object, options?: AxiosRequestConfig) => {
-  return service.request<T,DataType<T>>({
+const request = <T = any>(
+  url: string,
+  method = 'GET',
+  data?: Object,
+  options?: AxiosRequestConfig
+) => {
+  return service.request<T, DataType<T>>({
     url,
     method,
     [method === 'GET' ? 'params' : 'data']: data,
@@ -47,20 +52,20 @@ const request =<T=any> (url: string, method = 'GET', data?: Object, options?: Ax
   })
 }
 
-export const get=<T=any>(url:string,data:Object)=>{
-  return request<T>(url,'GET',data);
+export const get = <T = any>(url: string, data: Object) => {
+  return request<T>(url, 'GET', data)
 }
 
-export const post=<T=any>(url:string,data:Object)=>{
-  return request<T>(url,'POST',data);
+export const post = <T = any>(url: string, data: Object) => {
+  return request<T>(url, 'POST', data)
 }
 
-export const put=<T=any>(url:string,data:Object)=>{
-  return request<T>(url,'PUT',data);
+export const put = <T = any>(url: string, data: Object) => {
+  return request<T>(url, 'PUT', data)
 }
 
-export const del=<T=any>(url:string,data:Object)=>{
-  return request<T>(url,'DELETE',data);
+export const del = <T = any>(url: string, data: Object) => {
+  return request<T>(url, 'DELETE', data)
 }
 
 export default request
